@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Запросы.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Запросы.Designer.cs">
+      <DependentUpon>Запросы.cs</DependentUpon>
+    </Compile>
     <Compile Include="Начальник отдела сбыта\Отправить ресурсы.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -57,6 +63,12 @@
     </Compile>
     <Compile Include="Начальник отдела сбыта\Активные договоры.Designer.cs">
       <DependentUpon>Активные договоры.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Начальник цеха\Отправить запрос.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Начальник цеха\Отправить запрос.Designer.cs">
+      <DependentUpon>Отправить запрос.cs</DependentUpon>
     </Compile>
     <Compile Include="Начальник цеха\Добавить оборудование.cs">
       <SubType>Form</SubType>
@@ -90,11 +102,29 @@
     <Compile Include="Начальник отдела сбыта\Распределить ресурсы.Designer.cs">
       <DependentUpon>Распределить ресурсы.cs</DependentUpon>
     </Compile>
+    <Compile Include="Руководитель комбината\Отклонить запрос.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Руководитель комбината\Отклонить запрос.Designer.cs">
+      <DependentUpon>Отклонить запрос.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Руководитель комбината\Доступные договоры.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Руководитель комбината\Доступные договоры.Designer.cs">
+      <DependentUpon>Доступные договоры.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Запросы.resx">
+      <DependentUpon>Запросы.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Начальник отдела сбыта\Отправить ресурсы.resx">
       <DependentUpon>Отправить ресурсы.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Начальник отдела сбыта\Активные договоры.resx">
       <DependentUpon>Активные договоры.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Начальник цеха\Отправить запрос.resx">
+      <DependentUpon>Отправить запрос.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Начальник цеха\Добавить оборудование.resx">
       <DependentUpon>Добавить оборудование.cs</DependentUpon>
@@ -120,6 +150,12 @@
     <EmbeddedResource Include="Начальник отдела сбыта\Распределить ресурсы.resx">
       <DependentUpon>Распределить ресурсы.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Руководитель комбината\Отклонить запрос.resx">
+      <DependentUpon>Отклонить запрос.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Руководитель комбината\Доступные договоры.resx">
+      <DependentUpon>Доступные договоры.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -133,8 +169,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Руководитель комбината\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

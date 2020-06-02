@@ -8,13 +8,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace WindowsFormsApp1.Начальник_цеха
+namespace WindowsFormsApp1.Руководитель_комбината
 {
-    public partial class Form6 : Form
+    public partial class Form10 : Form
     {
-        public Form6()
+        public Form10()
         {
             InitializeComponent();
+        }
+
+        private void Form10_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

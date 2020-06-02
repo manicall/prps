@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace WindowsFormsApp1.Начальник_цеха
+namespace WindowsFormsApp1.Руководитель_комбината
 {
-    public partial class Form6 : Form
+    public partial class Form9 : Form
     {
-        public Form6()
+        public Form9()
         {
             InitializeComponent();
         }

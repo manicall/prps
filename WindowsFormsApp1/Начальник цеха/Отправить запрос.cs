@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp1.Начальник_цеха
 {
-    public partial class Form6 : Form
+    public partial class Form8 : Form
     {
-        public Form6()
+        public Form8()
         {
             InitializeComponent();
         }

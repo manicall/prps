@@ -20,15 +20,6 @@ namespace WindowsFormsApp1
         private void Form2_Load(object sender, EventArgs e)
         {
             this.dataGridView1.RowCount = 10;
-            this.dataGridView1.ColumnCount = 3;
-
-            this.dataGridView1.Columns[0].HeaderText = "Название";
-            this.dataGridView1.Columns[1].HeaderText = "Описание";
-            this.dataGridView1.Columns[2].HeaderText = "Общий объем добытых ресурсов";
-            this.dataGridView1.Columns[0].Width = 150;
-            this.dataGridView1.Columns[1].Width = 400;
-            this.dataGridView1.Columns[2].MinimumWidth = 200;
-
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -39,6 +30,11 @@ namespace WindowsFormsApp1
         private void button2_Click(object sender, EventArgs e)
         {
             new Form3().Show();
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
