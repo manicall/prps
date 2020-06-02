@@ -46,25 +46,67 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="Начальник отдела сбыта\Отправить ресурсы.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Начальник отдела сбыта\Отправить ресурсы.Designer.cs">
+      <DependentUpon>Отправить ресурсы.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form2.cs">
+    <Compile Include="Начальник отдела сбыта\Активные договоры.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form2.Designer.cs">
-      <DependentUpon>Form2.cs</DependentUpon>
+    <Compile Include="Начальник отдела сбыта\Активные договоры.Designer.cs">
+      <DependentUpon>Активные договоры.cs</DependentUpon>
     </Compile>
-    <Compile Include="окно входа в систему.cs" />
+    <Compile Include="Начальник цеха\Добавить оборудование.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Начальник цеха\Добавить оборудование.Designer.cs">
+      <DependentUpon>Добавить оборудование.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Начальник цеха\Оборудование.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Начальник цеха\Оборудование.Designer.cs">
+      <DependentUpon>Оборудование.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Окно входа в систему.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Окно входа в систему.Designer.cs">
+      <DependentUpon>Окно входа в систему.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Начальник отдела сбыта\Добытые ресурсы.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Начальник отдела сбыта\Добытые ресурсы.Designer.cs">
+      <DependentUpon>Добытые ресурсы.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Начальник отдела сбыта\Распределить ресурсы.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Начальник отдела сбыта\Распределить ресурсы.Designer.cs">
+      <DependentUpon>Распределить ресурсы.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Начальник отдела сбыта\Отправить ресурсы.resx">
+      <DependentUpon>Отправить ресурсы.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form2.resx">
-      <DependentUpon>Form2.cs</DependentUpon>
+    <EmbeddedResource Include="Начальник отдела сбыта\Активные договоры.resx">
+      <DependentUpon>Активные договоры.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Начальник цеха\Добавить оборудование.resx">
+      <DependentUpon>Добавить оборудование.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Начальник цеха\Оборудование.resx">
+      <DependentUpon>Оборудование.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Окно входа в систему.resx">
+      <DependentUpon>Окно входа в систему.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Начальник отдела сбыта\Добытые ресурсы.resx">
+      <DependentUpon>Добытые ресурсы.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -75,6 +117,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Начальник отдела сбыта\Распределить ресурсы.resx">
+      <DependentUpon>Распределить ресурсы.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -87,6 +132,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Руководитель комбината\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
