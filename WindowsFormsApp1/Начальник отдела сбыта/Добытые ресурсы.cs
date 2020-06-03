@@ -24,11 +24,13 @@ namespace WindowsFormsApp1
 
         private void button1_Click(object sender, EventArgs e)
         {
+
             new Distribution_of_resourses().ShowDialog();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
+            MessageBox.Show(dataGridView1.SelectedCells[0].ToString(), "Selected Cells");
             new Form3().Show();
         }
 

@@ -14,6 +14,7 @@ namespace WindowsFormsApp1
 {
     public partial class Form1 : Form
     {
+        
         public Form1()
         {
             InitializeComponent();
@@ -23,7 +24,7 @@ namespace WindowsFormsApp1
         {
 
             if (textBox2.Text == "1") new Form2().Show();
-            else if (textBox2.Text == "2") new Form5().Show();
+            else if (textBox2.Text == "2") new Оборудование().Show();
             else if (textBox2.Text == "3") new Form7().Show();
             else return;
             Hide();
@@ -33,5 +34,6 @@ namespace WindowsFormsApp1
         {
 
         }
+
     }
 }

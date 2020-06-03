@@ -10,21 +10,22 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp1.Начальник_цеха
 {
-    public partial class Form5 : Form
+    public partial class Оборудование : Form
     {
-        public Form5()
+        public Оборудование()
         {
             InitializeComponent();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            new Form6().ShowDialog();
+            Form6 form = new Form6(this);
+            form.ShowDialog();   
         }
 
         private void Form5_Load(object sender, EventArgs e)
-        {
-            this.dataGridView1.RowCount = 10;
+        {         
+            this.таблица_оборудование.RowCount = 10;
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -35,6 +36,7 @@ namespace WindowsFormsApp1.Начальник_цеха
         private void button2_Click(object sender, EventArgs e)
         {
             new Form8().Show();
+
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -43,7 +45,5 @@ namespace WindowsFormsApp1.Начальник_цеха
             form.buttons_disable();
             form.Show();
         }
-
-
     }
 }
