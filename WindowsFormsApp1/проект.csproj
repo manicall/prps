@@ -52,6 +52,12 @@
     <Compile Include="Запросы.Designer.cs">
       <DependentUpon>Запросы.cs</DependentUpon>
     </Compile>
+    <Compile Include="Начальник отдела сбыта\Информация о ресурсе.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Начальник отдела сбыта\Информация о ресурсе.Designer.cs">
+      <DependentUpon>Информация о ресурсе.cs</DependentUpon>
+    </Compile>
     <Compile Include="Начальник отдела сбыта\Отправить ресурсы.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -63,6 +69,12 @@
     </Compile>
     <Compile Include="Начальник отдела сбыта\Активные договоры.Designer.cs">
       <DependentUpon>Активные договоры.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Начальник цеха\Информация об оборудовании.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Начальник цеха\Информация об оборудовании.Designer.cs">
+      <DependentUpon>Информация об оборудовании.cs</DependentUpon>
     </Compile>
     <Compile Include="Начальник цеха\Отправить запрос.cs">
       <SubType>Form</SubType>
@@ -76,11 +88,11 @@
     <Compile Include="Начальник цеха\Добавить оборудование.Designer.cs">
       <DependentUpon>Добавить оборудование.cs</DependentUpon>
     </Compile>
-    <Compile Include="Начальник цеха\Оборудование.cs">
+    <Compile Include="Начальник цеха\Список оборудования.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Начальник цеха\Оборудование.Designer.cs">
-      <DependentUpon>Оборудование.cs</DependentUpon>
+    <Compile Include="Начальник цеха\Список оборудования.Designer.cs">
+      <DependentUpon>Список оборудования.cs</DependentUpon>
     </Compile>
     <Compile Include="Окно входа в систему.cs">
       <SubType>Form</SubType>
@@ -88,11 +100,11 @@
     <Compile Include="Окно входа в систему.Designer.cs">
       <DependentUpon>Окно входа в систему.cs</DependentUpon>
     </Compile>
-    <Compile Include="Начальник отдела сбыта\Добытые ресурсы.cs">
+    <Compile Include="Начальник отдела сбыта\Список добытых ресурсов.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Начальник отдела сбыта\Добытые ресурсы.Designer.cs">
-      <DependentUpon>Добытые ресурсы.cs</DependentUpon>
+    <Compile Include="Начальник отдела сбыта\Список добытых ресурсов.Designer.cs">
+      <DependentUpon>Список добытых ресурсов.cs</DependentUpon>
     </Compile>
     <Compile Include="Main.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -102,20 +114,38 @@
     <Compile Include="Начальник отдела сбыта\Распределить ресурсы.Designer.cs">
       <DependentUpon>Распределить ресурсы.cs</DependentUpon>
     </Compile>
+    <Compile Include="Информация о договоре.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Информация о договоре.Designer.cs">
+      <DependentUpon>Информация о договоре.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Руководитель комбината\Действия руководителя.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Руководитель комбината\Действия руководителя.Designer.cs">
+      <DependentUpon>Действия руководителя.cs</DependentUpon>
+    </Compile>
     <Compile Include="Руководитель комбината\Отклонить запрос.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Руководитель комбината\Отклонить запрос.Designer.cs">
       <DependentUpon>Отклонить запрос.cs</DependentUpon>
     </Compile>
-    <Compile Include="Руководитель комбината\Доступные договоры.cs">
+    <Compile Include="Руководитель комбината\Список доступных договоров.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Руководитель комбината\Доступные договоры.Designer.cs">
-      <DependentUpon>Доступные договоры.cs</DependentUpon>
+    <Compile Include="Руководитель комбината\Список доступных договоров.Designer.cs">
+      <DependentUpon>Список доступных договоров.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Запросы.resx">
       <DependentUpon>Запросы.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Информация о договоре.resx">
+      <DependentUpon>Информация о договоре.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Начальник отдела сбыта\Информация о ресурсе.resx">
+      <DependentUpon>Информация о ресурсе.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Начальник отдела сбыта\Отправить ресурсы.resx">
       <DependentUpon>Отправить ресурсы.cs</DependentUpon>
@@ -123,20 +153,23 @@
     <EmbeddedResource Include="Начальник отдела сбыта\Активные договоры.resx">
       <DependentUpon>Активные договоры.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Начальник цеха\Информация об оборудовании.resx">
+      <DependentUpon>Информация об оборудовании.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Начальник цеха\Отправить запрос.resx">
       <DependentUpon>Отправить запрос.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Начальник цеха\Добавить оборудование.resx">
       <DependentUpon>Добавить оборудование.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Начальник цеха\Оборудование.resx">
-      <DependentUpon>Оборудование.cs</DependentUpon>
+    <EmbeddedResource Include="Начальник цеха\Список оборудования.resx">
+      <DependentUpon>Список оборудования.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Окно входа в систему.resx">
       <DependentUpon>Окно входа в систему.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Начальник отдела сбыта\Добытые ресурсы.resx">
-      <DependentUpon>Добытые ресурсы.cs</DependentUpon>
+    <EmbeddedResource Include="Начальник отдела сбыта\Список добытых ресурсов.resx">
+      <DependentUpon>Список добытых ресурсов.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -150,11 +183,14 @@
     <EmbeddedResource Include="Начальник отдела сбыта\Распределить ресурсы.resx">
       <DependentUpon>Распределить ресурсы.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Руководитель комбината\Действия руководителя.resx">
+      <DependentUpon>Действия руководителя.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Руководитель комбината\Отклонить запрос.resx">
       <DependentUpon>Отклонить запрос.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Руководитель комбината\Доступные договоры.resx">
-      <DependentUpon>Доступные договоры.cs</DependentUpon>
+    <EmbeddedResource Include="Руководитель комбината\Список доступных договоров.resx">
+      <DependentUpon>Список доступных договоров.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

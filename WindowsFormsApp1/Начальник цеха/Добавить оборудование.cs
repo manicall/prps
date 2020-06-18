@@ -29,6 +29,10 @@ namespace WindowsFormsApp1.Начальник_цеха
             оборудование.таблица_оборудование.Rows[0].Cells[2].Value = textBox3.Text;
             Close();
         }
-        
+
+        private void Form6_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
