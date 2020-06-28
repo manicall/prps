@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp1.Руководитель_комбината
 {
-    public partial class Form9 : Form
+    public partial class Список_доступных_договоров : Form
     {
-        public Form9()
+        public Список_доступных_договоров()
         {
             InitializeComponent();
+        }
+
+        private void Список_доступных_договоров_Load(object sender, EventArgs e)
+        {
+            this.dataGridView1.RowCount = 10;
         }
     }
 }

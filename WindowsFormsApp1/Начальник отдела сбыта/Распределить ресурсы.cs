@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp1
 {
-    public partial class Distribution_of_resourses : Form
+    public partial class Распределить_ресурсы : Form
     {
-        public Distribution_of_resourses()
+        public Распределить_ресурсы()
         {
             InitializeComponent();
         }

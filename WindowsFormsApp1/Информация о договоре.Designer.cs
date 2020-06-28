@@ -1,6 +1,6 @@
 ﻿namespace WindowsFormsApp1
 {
-    partial class Описание_предмета_договора
+    partial class Информация_о_договоре
     {
         /// <summary>
         /// Required designer variable.
@@ -119,7 +119,7 @@
             this.button1.Text = "Закрыть";
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // Описание_предмета_договора
+            // Информация_о_договоре
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -133,7 +133,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Name = "Описание_предмета_договора";
+            this.Name = "Информация_о_договоре";
             this.Text = "Информация о договоре";
             this.ResumeLayout(false);
             this.PerformLayout();

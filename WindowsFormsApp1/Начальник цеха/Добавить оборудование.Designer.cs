@@ -1,6 +1,6 @@
 ﻿namespace WindowsFormsApp1.Начальник_цеха
 {
-    partial class Form6
+    partial class Добавить_оборудование
     {
         /// <summary>
         /// Required designer variable.
@@ -115,7 +115,7 @@
             this.textBox3.Size = new System.Drawing.Size(163, 68);
             this.textBox3.TabIndex = 7;
             // 
-            // Form6
+            // Добавить_оборудование
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -132,7 +132,7 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "Form6";
+            this.Name = "Добавить_оборудование";
             this.Text = "Добавить оборудование";
             this.Load += new System.EventHandler(this.Form6_Load);
             this.ResumeLayout(false);

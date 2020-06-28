@@ -1,6 +1,6 @@
 ﻿namespace WindowsFormsApp1.Начальник_цеха
 {
-    partial class Form8
+    partial class Отправить_запрос
     {
         /// <summary>
         /// Required designer variable.
@@ -90,7 +90,7 @@
             this.label4.TabIndex = 14;
             this.label4.Text = "Срок поставки";
             // 
-            // Form8
+            // Отправить_запрос
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -104,7 +104,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "Form8";
+            this.Name = "Отправить_запрос";
             this.Text = "Отправить запрос";
             this.ResumeLayout(false);
             this.PerformLayout();

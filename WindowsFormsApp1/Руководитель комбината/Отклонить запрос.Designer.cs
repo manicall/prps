@@ -1,6 +1,6 @@
 ﻿namespace WindowsFormsApp1.Руководитель_комбината
 {
-    partial class Form10
+    partial class Отклонить_запрос
     {
         /// <summary>
         /// Required designer variable.
@@ -70,7 +70,7 @@
             this.button2.Text = "Отмена";
             this.button2.UseVisualStyleBackColor = true;
             // 
-            // Form10
+            // Отклонить_запрос
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -79,7 +79,7 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
-            this.Name = "Form10";
+            this.Name = "Отклонить_запрос";
             this.Text = "Отклонить запрос";
             this.Load += new System.EventHandler(this.Form10_Load);
             this.ResumeLayout(false);

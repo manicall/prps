@@ -1,6 +1,6 @@
 ﻿namespace WindowsFormsApp1.Начальник_цеха
 {
-    partial class Оборудование
+    partial class Список_оборудования
     {
         /// <summary>
         /// Required designer variable.
@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.таблица_оборудование = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button4 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.таблица_оборудование)).BeginInit();
             this.SuspendLayout();
@@ -52,6 +52,20 @@
             this.таблица_оборудование.Size = new System.Drawing.Size(373, 187);
             this.таблица_оборудование.TabIndex = 0;
             this.таблица_оборудование.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Название";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Width = 150;
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Производитель";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            this.Column2.Width = 150;
             // 
             // button1
             // 
@@ -85,20 +99,6 @@
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Название";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            this.Column1.Width = 150;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Производитель";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            this.Column2.Width = 150;
-            // 
             // button4
             // 
             this.button4.Location = new System.Drawing.Point(307, 202);
@@ -108,7 +108,7 @@
             this.button4.Text = "Выход";
             this.button4.UseVisualStyleBackColor = true;
             // 
-            // Оборудование
+            // Список_оборудования
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -119,7 +119,7 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.таблица_оборудование);
             this.Margin = new System.Windows.Forms.Padding(2);
-            this.Name = "Оборудование";
+            this.Name = "Список_оборудования";
             this.Text = "Список оборудования";
             this.Load += new System.EventHandler(this.Form5_Load);
             ((System.ComponentModel.ISupportInitialize)(this.таблица_оборудование)).EndInit();

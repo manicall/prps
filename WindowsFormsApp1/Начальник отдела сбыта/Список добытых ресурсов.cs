@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp1
 {
-    public partial class Form2 : Form
+    public partial class Список_добытых_ресурсов : Form
     {
-        public Form2()
+        public Список_добытых_ресурсов()
         {
             InitializeComponent();
         }
@@ -25,13 +25,13 @@ namespace WindowsFormsApp1
         private void button1_Click(object sender, EventArgs e)
         {
 
-            new Distribution_of_resourses().ShowDialog();
+            new Распределить_ресурсы().ShowDialog();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
            
-            new Form3().Show();
+            new Список_активных_договоров().Show();
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)

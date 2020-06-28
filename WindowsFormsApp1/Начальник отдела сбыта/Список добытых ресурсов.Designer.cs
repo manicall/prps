@@ -1,6 +1,6 @@
 ﻿namespace WindowsFormsApp1
 {
-    partial class Form2
+    partial class Список_добытых_ресурсов
     {
         /// <summary>
         /// Required designer variable.
@@ -103,7 +103,7 @@
             this.button4.Text = "Выход";
             this.button4.UseVisualStyleBackColor = true;
             // 
-            // Form2
+            // Список_добытых_ресурсов
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -113,7 +113,7 @@
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Name = "Form2";
+            this.Name = "Список_добытых_ресурсов";
             this.Text = "Список добытых ресурсов";
             this.Load += new System.EventHandler(this.Form2_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

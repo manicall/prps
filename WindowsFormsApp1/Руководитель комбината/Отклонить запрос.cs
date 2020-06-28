@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp1.Руководитель_комбината
 {
-    public partial class Form10 : Form
+    public partial class Отклонить_запрос : Form
     {
-        public Form10()
+        public Отклонить_запрос()
         {
             InitializeComponent();
         }

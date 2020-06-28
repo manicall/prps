@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp1
 {
-    public partial class Form7 : Form
+    public partial class Список_запросов : Form
     {
-        public Form7()
+        public Список_запросов()
         {
             InitializeComponent();
         }
@@ -36,7 +36,7 @@ namespace WindowsFormsApp1
 
         private void button2_Click(object sender, EventArgs e)  
         {
-            new Form10().Show();
+            new Отклонить_запрос().Show();
         }
 
         private void button3_Click(object sender, EventArgs e)

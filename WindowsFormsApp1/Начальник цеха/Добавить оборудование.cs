@@ -11,14 +11,14 @@ using WindowsFormsApp1;
 
 namespace WindowsFormsApp1.Начальник_цеха
 {
-    public partial class Form6 : Form
+    public partial class Добавить_оборудование : Form
     {
-        public Оборудование оборудование;
-        public Form6()
+        public Список_оборудования оборудование;
+        public Добавить_оборудование()
         {
             InitializeComponent();
         }
-        public Form6(Оборудование оборудование) : this()
+        public Добавить_оборудование(Список_оборудования оборудование) : this()
         {
             this.оборудование = оборудование;
         }

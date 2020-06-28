@@ -58,17 +58,17 @@
     <Compile Include="Начальник отдела сбыта\Информация о ресурсе.Designer.cs">
       <DependentUpon>Информация о ресурсе.cs</DependentUpon>
     </Compile>
-    <Compile Include="Начальник отдела сбыта\Отправить ресурсы.cs">
+    <Compile Include="Начальник отдела сбыта\Отправить ресурсы согласно договору.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Начальник отдела сбыта\Отправить ресурсы.Designer.cs">
-      <DependentUpon>Отправить ресурсы.cs</DependentUpon>
+    <Compile Include="Начальник отдела сбыта\Отправить ресурсы согласно договору.Designer.cs">
+      <DependentUpon>Отправить ресурсы согласно договору.cs</DependentUpon>
     </Compile>
-    <Compile Include="Начальник отдела сбыта\Активные договоры.cs">
+    <Compile Include="Начальник отдела сбыта\Список активных договоров.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Начальник отдела сбыта\Активные договоры.Designer.cs">
-      <DependentUpon>Активные договоры.cs</DependentUpon>
+    <Compile Include="Начальник отдела сбыта\Список активных договоров.Designer.cs">
+      <DependentUpon>Список активных договоров.cs</DependentUpon>
     </Compile>
     <Compile Include="Начальник цеха\Информация об оборудовании.cs">
       <SubType>Form</SubType>
@@ -147,11 +147,11 @@
     <EmbeddedResource Include="Начальник отдела сбыта\Информация о ресурсе.resx">
       <DependentUpon>Информация о ресурсе.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Начальник отдела сбыта\Отправить ресурсы.resx">
-      <DependentUpon>Отправить ресурсы.cs</DependentUpon>
+    <EmbeddedResource Include="Начальник отдела сбыта\Отправить ресурсы согласно договору.resx">
+      <DependentUpon>Отправить ресурсы согласно договору.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Начальник отдела сбыта\Активные договоры.resx">
-      <DependentUpon>Активные договоры.cs</DependentUpon>
+    <EmbeddedResource Include="Начальник отдела сбыта\Список активных договоров.resx">
+      <DependentUpon>Список активных договоров.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Начальник цеха\Информация об оборудовании.resx">
       <DependentUpon>Информация об оборудовании.cs</DependentUpon>

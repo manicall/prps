@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp1
 {
-    public partial class Описание_предмета_договора : Form
+    public partial class Информация_о_договоре : Form
     {
-        public Описание_предмета_договора()
+        public Информация_о_договоре()
         {
             InitializeComponent();
         }

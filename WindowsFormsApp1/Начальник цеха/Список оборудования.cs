@@ -10,16 +10,16 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp1.Начальник_цеха
 {
-    public partial class Оборудование : Form
+    public partial class Список_оборудования : Form
     {
-        public Оборудование()
+        public Список_оборудования()
         {
             InitializeComponent();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Form6 form = new Form6(this);
+            Добавить_оборудование form = new Добавить_оборудование(this);
             form.ShowDialog();   
         }
 
@@ -35,13 +35,13 @@ namespace WindowsFormsApp1.Начальник_цеха
 
         private void button2_Click(object sender, EventArgs e)
         {
-            new Form8().Show();
+            new Отправить_запрос().Show();
 
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            Form7 form = new Form7();
+            Список_запросов form = new Список_запросов();
             form.buttons_disable();
             form.Show();
         }

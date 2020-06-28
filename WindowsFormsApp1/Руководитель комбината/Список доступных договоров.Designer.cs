@@ -1,6 +1,6 @@
 ﻿namespace WindowsFormsApp1.Руководитель_комбината
 {
-    partial class Form9
+    partial class Список_доступных_договоров
     {
         /// <summary>
         /// Required designer variable.
@@ -101,7 +101,7 @@
             this.button3.Text = "Назад";
             this.button3.UseVisualStyleBackColor = true;
             // 
-            // Form9
+            // Список_доступных_договоров
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -110,8 +110,9 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridView1);
-            this.Name = "Form9";
+            this.Name = "Список_доступных_договоров";
             this.Text = "Список доступных договоров";
+            this.Load += new System.EventHandler(this.Список_доступных_договоров_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
