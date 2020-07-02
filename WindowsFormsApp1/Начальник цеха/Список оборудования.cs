@@ -12,9 +12,14 @@ namespace WindowsFormsApp1.Начальник_цеха
 {
     public partial class Список_оборудования : Form
     {
+        Form1 окноВходаВСистему;
         public Список_оборудования()
         {
             InitializeComponent();
+        }
+        public Список_оборудования(Form1 form1) : this()
+        {
+            окноВходаВСистему = form1;
         }
 
         private void button1_Click(object sender, EventArgs e)

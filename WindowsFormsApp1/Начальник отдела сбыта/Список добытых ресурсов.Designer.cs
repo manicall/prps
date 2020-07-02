@@ -67,7 +67,7 @@
             this.dataGridView1.Location = new System.Drawing.Point(10, 11);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.Size = new System.Drawing.Size(412, 213);
+            this.dataGridView1.Size = new System.Drawing.Size(420, 213);
             this.dataGridView1.TabIndex = 3;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -96,26 +96,29 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(370, 242);
+            this.button4.Location = new System.Drawing.Point(378, 242);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(52, 36);
             this.button4.TabIndex = 5;
             this.button4.Text = "Выход";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // Список_добытых_ресурсов
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(432, 290);
+            this.ClientSize = new System.Drawing.Size(455, 290);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Список_добытых_ресурсов";
             this.Text = "Список добытых ресурсов";
-            this.Load += new System.EventHandler(this.Form2_Load);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Список_добытых_ресурсов_FormClosed);
+            this.Load += new System.EventHandler(this.Список_добытых_ресурсов_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
