@@ -13,11 +13,15 @@ namespace WindowsFormsApp1
 {
     public partial class Список_запросов : Form
     {
+        private Действия_руководителя ДействияРуководителя;
         public Список_запросов()
         {
             InitializeComponent();
         }
-
+        public Список_запросов(Действия_руководителя form) : this()
+        {
+            ДействияРуководителя = form;
+        }
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
@@ -36,12 +40,18 @@ namespace WindowsFormsApp1
 
         private void button2_Click(object sender, EventArgs e)  
         {
+
             new Отклонить_запрос().Show();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
+            Close();
+        }
 
+        private void Список_запросов_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            ДействияРуководителя.Show();
         }
     }
 }

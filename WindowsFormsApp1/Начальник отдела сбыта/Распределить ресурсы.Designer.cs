@@ -31,7 +31,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+           this.label3 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
@@ -41,12 +41,13 @@
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(41, 94);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(70, 28);
             this.button1.TabIndex = 0;
             this.button1.Text = "Отправить";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label1
             // 
@@ -81,7 +82,7 @@
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(93, 10);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(129, 20);
             this.textBox1.TabIndex = 4;
@@ -89,7 +90,7 @@
             // textBox2
             // 
             this.textBox2.Location = new System.Drawing.Point(93, 32);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(2);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(129, 20);
             this.textBox2.TabIndex = 5;
@@ -97,7 +98,7 @@
             // textBox3
             // 
             this.textBox3.Location = new System.Drawing.Point(93, 55);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox3.Margin = new System.Windows.Forms.Padding(2);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(129, 20);
             this.textBox3.TabIndex = 6;
@@ -105,12 +106,13 @@
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(143, 94);
-            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button2.Margin = new System.Windows.Forms.Padding(2);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(56, 28);
             this.button2.TabIndex = 7;
             this.button2.Text = "Отмена";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // Распределить_ресурсы
             // 
@@ -126,12 +128,11 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Распределить_ресурсы";
             this.Text = "Распределить ресурсы";
-            this.Load += new System.EventHandler(this.Distribution_of_resourses_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

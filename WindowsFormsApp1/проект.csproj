@@ -47,11 +47,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
-    <Compile Include="Запросы.cs">
+    <Compile Include="Список запросов.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Запросы.Designer.cs">
-      <DependentUpon>Запросы.cs</DependentUpon>
+    <Compile Include="Список запросов.Designer.cs">
+      <DependentUpon>Список запросов.cs</DependentUpon>
     </Compile>
     <Compile Include="Начальник отдела сбыта\Информация о ресурсе.cs">
       <SubType>Form</SubType>
@@ -139,8 +139,8 @@
     <Compile Include="Руководитель комбината\Список доступных договоров.Designer.cs">
       <DependentUpon>Список доступных договоров.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Запросы.resx">
-      <DependentUpon>Запросы.cs</DependentUpon>
+    <EmbeddedResource Include="Список запросов.resx">
+      <DependentUpon>Список запросов.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Информация о договоре.resx">
       <DependentUpon>Информация о договоре.cs</DependentUpon>

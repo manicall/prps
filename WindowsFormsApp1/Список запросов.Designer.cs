@@ -146,6 +146,7 @@
             this.Controls.Add(this.dataGridView1);
             this.Name = "Список_запросов";
             this.Text = "Список запросов";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Список_запросов_FormClosed);
             this.Load += new System.EventHandler(this.Form7_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);

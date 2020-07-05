@@ -12,6 +12,7 @@ namespace WindowsFormsApp1.Начальник_цеха
 {
     public partial class Список_оборудования : Form
     {
+
         Form1 окноВходаВСистему;
         public Список_оборудования()
         {
@@ -41,14 +42,16 @@ namespace WindowsFormsApp1.Начальник_цеха
         private void button2_Click(object sender, EventArgs e)
         {
             new Отправить_запрос().Show();
-
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void button4_Click(object sender, EventArgs e)
         {
-            Список_запросов form = new Список_запросов();
-            form.buttons_disable();
-            form.Show();
+            Close();
+        }
+
+        private void Список_оборудования_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            окноВходаВСистему.Show();
         }
     }
 }
