@@ -38,7 +38,7 @@ namespace WindowsFormsApp1
             MessageBox.Show(name + " " + password + " " + FIO + " ");
         }
     }
-    class Worker1 : Workers 
+    class Worker1 : Workers
     {
         public Worker1() { }
         public Worker1(string name, string password, string FIO) : base(name, password, FIO) { }
@@ -54,6 +54,7 @@ namespace WindowsFormsApp1
         public Worker3() { }
         public Worker3(string name, string password, string FIO) : base(name, password, FIO) { }
     }
+
     public class Resource
     {
         private string name;
@@ -65,8 +66,8 @@ namespace WindowsFormsApp1
             this.description = description;
         }
 
-        public string Name { get{ return name; } }
-        public string Description { get{ return description; } }
+        public string Name { get { return name; } }
+        public string Description { get { return description; } }
 
     }
     public class Extraction
@@ -74,8 +75,7 @@ namespace WindowsFormsApp1
         private Resource resource;
         private string volumeReserve;
         private string volumeSale;
-        private string volumeAgreement;
-        private string volumeExport; 
+        private string volumeExport;
         private string volumeUndistributed;
         public Extraction(Resource resource, string volumeSale, string volumeExport, string volumeReserve, string volumeUndistributed)
         {
@@ -87,71 +87,104 @@ namespace WindowsFormsApp1
         }
         public void DistributionOfResources(string volumeReserve, string volumeSale, string volumeExport)
         {
-            this.volumeReserve = Convert.ToString(Convert.ToInt32(this.volumeReserve) + Convert.ToInt32(volumeReserve));
-            this.volumeSale = Convert.ToString(Convert.ToInt32(this.volumeSale) + Convert.ToInt32(volumeSale));
-            this.volumeExport = Convert.ToString(Convert.ToInt32(this.volumeExport) + Convert.ToInt32(volumeExport));
             try
             {
-                if (Convert.ToInt32(volumeUndistributed)
-                - (Convert.ToInt32(volumeReserve)
-                + Convert.ToInt32(volumeSale)
-                + Convert.ToInt32(volumeExport)) > 0)
-                {
-                    volumeUndistributed = 
-                    Convert.ToString(Convert.ToInt32(volumeUndistributed)
-                    - (Convert.ToInt32(volumeReserve)
-                    + Convert.ToInt32(volumeSale)
-                    + Convert.ToInt32(volumeExport)));
-                }
-                else MessageBox.Show("Недостаточно добытых ресурсов","Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.volumeReserve = Convert.ToString(Convert.ToDecimal(this.volumeReserve) + Convert.ToDecimal(volumeReserve));
+                this.volumeSale = Convert.ToString(Convert.ToDecimal(this.volumeSale) + Convert.ToDecimal(volumeSale));
+                this.volumeExport = Convert.ToString(Convert.ToDecimal(this.volumeExport) + Convert.ToDecimal(volumeExport));
+                ReduceUndistributed(volumeReserve, volumeSale, volumeExport);
             }
-            catch (Exception ex) { MessageBox.Show(ex.Message, "Предупреждение", MessageBoxButtons.OK, MessageBoxIcon.Warning);}
+            catch (Exception ex) { MessageBox.Show(ex.Message, "Предупреждение", MessageBoxButtons.OK, MessageBoxIcon.Warning); }
             SaveChanges();
         }
+
+        public void ReduceUndistributed(string volumeReserve, string volumeSale, string volumeExport) {
+            if (Convert.ToDecimal(volumeUndistributed)
+                - (Convert.ToDecimal(volumeReserve)
+                + Convert.ToDecimal(volumeSale)
+                + Convert.ToDecimal(volumeExport)) >= 0)
+            {
+                volumeUndistributed =
+                Convert.ToString(Convert.ToDecimal(volumeUndistributed)
+                - (Convert.ToDecimal(volumeReserve)
+                + Convert.ToDecimal(volumeSale)
+                + Convert.ToDecimal(volumeExport)));
+            }
+            else MessageBox.Show("Недостаточно добытых ресурсов", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        public bool CheckReduceUndistributed(string volumeAgreement) {
+            if (Convert.ToDecimal(volumeUndistributed) - Convert.ToDecimal(volumeAgreement) >= 0)
+            {
+                return true;
+            }
+            else
+            {
+                if (MessageBox.Show("Недостаточно добытых ресурсов. Компенсировать недостающую часть ресурсами из резерва?",
+                    "Внимание",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Warning) == DialogResult.Yes)
+                {
+                    if (CheckReduceUndistributedAndReserve(Convert.ToString(Convert.ToDecimal(volumeAgreement) - Convert.ToDecimal(volumeUndistributed)))) return true;
+                    else return false;
+                }
+                else return false;
+            }
+        }
+        private bool CheckReduceUndistributedAndReserve(string volumeAgreement) {
+            if (Convert.ToDecimal(volumeReserve) - Convert.ToDecimal(volumeAgreement) >= 0) return true;
+            else {
+                MessageBox.Show("Недостаточно добытых ресурсов",
+                 "Ошибка",
+                 MessageBoxButtons.OK,
+                 MessageBoxIcon.Error);
+                return false; 
+            } 
+        }
+        public void ReduceUndistributed(string volumeAgreement)
+        {
+            if (Convert.ToDecimal(volumeUndistributed) - (Convert.ToDecimal(volumeAgreement)) >= 0)
+            {
+                volumeUndistributed = Convert.ToString(Convert.ToDecimal(volumeUndistributed) - Convert.ToDecimal(volumeAgreement));
+            }
+            else
+            {
+                ReduceUndistributedAndReserve(Convert.ToString(Convert.ToDecimal(volumeAgreement) - Convert.ToDecimal(volumeUndistributed)));             
+            }
+            SaveChanges();
+        }
+        private void ReduceUndistributedAndReserve(string volumeAgreement)
+        {
+                volumeUndistributed = "0";
+                volumeReserve = Convert.ToString(Convert.ToDecimal(volumeReserve) - Convert.ToDecimal(volumeAgreement));
+        }
+
         public void SaveChanges()
-        {       
+        {
             StreamReader reader = new StreamReader("List of extracted resources.txt");
             string str = reader.ReadToEnd();
             reader.Close();
             // извлекаем строку, которая была изменена
-            string subStr = str.Substring(str.IndexOf(Resource.Name));
+            string subStr = str.Substring(str.IndexOf(resource.Name));
             try
             {
                 subStr = subStr.Remove(subStr.IndexOf("\n"));
             }
             catch { }  // если выбрана последняя запись(тк в конце нет "\n")
-
-            for (int i = 0; i < subStr.Length; i++) {
-                while(int.TryParse(Convert.ToString(subStr[i]), out int x))  // проверка является ли символ числом
-                {
-                    subStr = subStr.Remove(i, 1); // удаляем число      
-                }
-            }
-            // вставляем новые числа на нужные позиции
-            int index;
-            subStr = subStr.Insert(index = subStr.IndexOf("|") + 1, volumeReserve);
-            subStr = subStr.Insert(index = subStr.IndexOf("|", index) + 1, volumeSale);
-            subStr = subStr.Insert(index = subStr.IndexOf("|", index) + 1, volumeExport);
-            subStr = subStr.Insert(subStr.IndexOf("|", index) + 1, volumeUndistributed);
-            // вставляем строку с нужными числами, вместо старой
-            string res;
-            try
-            {
-                res = str.Remove(str.IndexOf(Resource.Name), str.IndexOf("\n", str.IndexOf(Resource.Name)) - str.IndexOf(Resource.Name));
-            }
-            catch { res = str.Remove(str.IndexOf(Resource.Name), str.Length - str.IndexOf(Resource.Name)); } // если выбрана последняя запись
-            res = res.Insert(str.IndexOf(Resource.Name), subStr);
+            string[] line = subStr.Split('|');
+            line[1] = volumeReserve.PadRight(10);
+            line[2] = volumeSale.PadRight(10);
+            line[3] = volumeExport.PadRight(10);
+            line[4] = volumeUndistributed.PadRight(10);
+            string temp = string.Join("|", line);
+            str = str.Replace(subStr, temp);
             // перезаписываем файл
             StreamWriter writer = new StreamWriter("List of extracted resources.txt");
-            writer.Write(res);
+            writer.Write(str);
             writer.Close();
         }
-        public Resource Resource { 
+        public Resource Resource {
             get { return resource; }
-        }
-        public string VolumeAgreement
-        {
-            get { return volumeAgreement; }
         }
         public string VolumeSale
         {
@@ -170,16 +203,84 @@ namespace WindowsFormsApp1
             get { return volumeUndistributed; }
         }
     }
-    public class ActiveAgreements
-    { 
-        string startDate;
-        string endDate;
-        string remainder;
 
-        ActiveAgreements
+    public class Agreement
+    {
+        private Resource resource;
+        private string startDate; // дата начала
+        private string endDate; // дата окончания
+        private string remainder; // остаток
+        private string description; // описание предмета договора
+        private string status; // статус договора
 
+        public Agreement(Resource resource, string startDate, string endDate, string remainder, string description, string status) {
+            this.resource = resource;
+            this.startDate = startDate;
+            this.endDate = endDate;
+            this.remainder = remainder;
+            this.description = description;
+            this.status = status;
+        }
 
+        public bool SendResourcesAccordingToAgreement(string volumeAgreement)
+        {
+            try
+            {
+                if (Convert.ToDecimal(remainder) - Convert.ToDecimal(volumeAgreement) < 0)
+                {
+                    MessageBox.Show("Попытка отправить больше ресурсов, чем осталось!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return false;
+                }
+                else
+                {
+                    remainder = Convert.ToString(Convert.ToDecimal(remainder) - Convert.ToDecimal(volumeAgreement));
+                    SaveChanges(volumeAgreement);
+                    return true;
+                }
+            }
+            catch (Exception ex) { MessageBox.Show(ex.Message, "ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error); }
+            return false;          
+        }
+        private void SaveChanges(string volumeAgreement)
+        {
+            StreamReader reader = new StreamReader("agreements.txt");
+            string str = reader.ReadToEnd();
+            reader.Close();
+            // извлекаем строку, которая была изменена
+            string subStr = "";
+            int index = 0;
+            while (index != -1) { 
+            index = str.IndexOf(resource.Name, index) + 1;
+            subStr = str.Substring(index - 1);
+            try
+            {
+                subStr = subStr.Remove(subStr.IndexOf("\n"));
+            }
+            catch { }  // если выбрана последняя запись(тк в конце нет "\n")
+                if (subStr.IndexOf(resource.Name) != -1 &&
+                        subStr.IndexOf(startDate) != -1 &&
+                        subStr.IndexOf(endDate) != -1 &&
+                        subStr.IndexOf(description) != -1 &&
+                        subStr.IndexOf(status) != -1)
+                {
+                    break;
+                }
+            }
+            string[] line = subStr.Split('|');
+            line[3] = remainder.PadRight(10);
+            string temp = string.Join("|", line);
+            str = str.Replace(subStr, temp);
+            StreamWriter writer = new StreamWriter("agreements.txt");
+            writer.Write(str);
+            writer.Close();
+        }
+        private void ChangeStatus() {
 
+        }
+        public string StartDate { get { return startDate; } }
+        public string EndDate { get { return endDate; } }
+        public string Remainder { get { return remainder; } }
+        public string Description { get { return description; } }
+        public string Status { get { return status; } }
     }
-
 }

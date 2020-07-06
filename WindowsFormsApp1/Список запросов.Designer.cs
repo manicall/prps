@@ -144,6 +144,7 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridView1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Список_запросов";
             this.Text = "Список запросов";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Список_запросов_FormClosed);

@@ -26,22 +26,7 @@ namespace WindowsFormsApp1.Начальник_отдела_сбыта
 
         private void Информация_о_ресурсе_Load(object sender, EventArgs e)
         {
-            try
-            {
-                textBox2.Text = Convert.ToString(Convert.ToInt32(textBox2.Text) + Convert.ToInt32(extraction.VolumeReserve));
-                textBox3.Text = Convert.ToString(Convert.ToInt32(textBox3.Text) + Convert.ToInt32(extraction.VolumeSale));
-                textBox4.Text = Convert.ToString(Convert.ToInt32(textBox4.Text) + Convert.ToInt32(extraction.VolumeExport));
-                textBox5.Text = extraction.VolumeUndistributed;
-            }
-            catch
-            {
-                textBox1.Text = extraction.Resource.Name;
-                textBox2.Text = extraction.VolumeReserve;
-                textBox3.Text = extraction.VolumeSale;
-                textBox4.Text = extraction.VolumeExport;
-                textBox5.Text = extraction.VolumeUndistributed;
-                textBox6.Text = extraction.Resource.Description;
-            }
+            UpdateInformation(extraction);
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -49,7 +34,12 @@ namespace WindowsFormsApp1.Начальник_отдела_сбыта
             Close();
         }
         public void UpdateInformation(Extraction extraction) {
-            Информация_о_ресурсе_Load(new object(), new EventArgs());
+                textBox1.Text = extraction.Resource.Name;
+                textBox2.Text = extraction.VolumeReserve;
+                textBox3.Text = extraction.VolumeSale;
+                textBox4.Text = extraction.VolumeExport;
+                textBox5.Text = extraction.VolumeUndistributed;
+                textBox6.Text = extraction.Resource.Description;       
         }
     }
 }

@@ -12,14 +12,30 @@ namespace WindowsFormsApp1
 {
     public partial class Информация_о_договоре : Form
     {
+        Список_активных_договоров списокАктивныхДоговоров;
+        Agreement agreement;
         public Информация_о_договоре()
         {
             InitializeComponent();
         }
-
-        private void label1_Click(object sender, EventArgs e)
+        public Информация_о_договоре(Список_активных_договоров списокАктивныхДоговоров, Agreement agreement) : this()
         {
-
+            this.списокАктивныхДоговоров = списокАктивныхДоговоров;
+            this.agreement = agreement;
+        }
+        private void Информация_о_договоре_Load(object sender, EventArgs e)
+        {
+            UpdateInformation(agreement);
+        }
+        public void UpdateInformation(Agreement agreement) {
+            textBox1.Text = agreement.StartDate;
+            textBox2.Text = agreement.EndDate;
+            textBox3.Text = agreement.Remainder;
+            textBox4.Text = agreement.Description;
+        }
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

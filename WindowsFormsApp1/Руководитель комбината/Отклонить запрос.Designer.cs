@@ -79,6 +79,7 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Отклонить_запрос";
             this.Text = "Отклонить запрос";
             this.Load += new System.EventHandler(this.Form10_Load);
