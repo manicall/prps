@@ -12,6 +12,7 @@ namespace WindowsFormsApp1.Руководитель_комбината
 {
     public partial class Действия_руководителя : Form
     {
+
         Form1 окноВходаВСистему;
         public Действия_руководителя()
         {
@@ -42,5 +43,6 @@ namespace WindowsFormsApp1.Руководитель_комбината
         {
             окноВходаВСистему.Show();
         }
+
     }
 }

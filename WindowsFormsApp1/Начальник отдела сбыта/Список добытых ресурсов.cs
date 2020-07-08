@@ -56,7 +56,7 @@ namespace WindowsFormsApp1
         {
             if (СписокАктивныхДоговоров == null || СписокАктивныхДоговоров.IsDisposed)
             {
-                СписокАктивныхДоговоров = new Список_активных_договоров(this, ИнформацияОРесурсе, extractions[dataGridView1.CurrentCell.RowIndex]);
+                СписокАктивныхДоговоров = new Список_активных_договоров(this, extractions[dataGridView1.CurrentCell.RowIndex]);
                 СписокАктивныхДоговоров.Show();
                 dataGridView1.Enabled = false;
             }

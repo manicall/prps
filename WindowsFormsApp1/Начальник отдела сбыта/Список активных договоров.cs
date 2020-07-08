@@ -15,7 +15,6 @@ namespace WindowsFormsApp1
     public partial class Список_активных_договоров : Form
     {
         Информация_о_договоре ИнформацияОДоговоре;
-        Информация_о_ресурсе ИнформацияОРесурсе;
         private Список_добытых_ресурсов списокДобытыхРесурсов;
         private Extraction extraction;
         private List<Agreement> agreements = new List<Agreement>();
@@ -23,10 +22,9 @@ namespace WindowsFormsApp1
         {
             InitializeComponent();
         }
-        public Список_активных_договоров(Список_добытых_ресурсов списокДобытыхРесурсов, Информация_о_ресурсе ИнформацияОРесурсе, Extraction extraction) : this()
+        public Список_активных_договоров(Список_добытых_ресурсов списокДобытыхРесурсов, Extraction extraction) : this()
         {
             this.списокДобытыхРесурсов = списокДобытыхРесурсов;
-            this.ИнформацияОРесурсе = ИнформацияОРесурсе;
             this.extraction = extraction;
         }
         private void Список_активных_договоров_Load(object sender, EventArgs e)
@@ -43,6 +41,7 @@ namespace WindowsFormsApp1
             if (agreements.Count == 0)
             {
                 MessageBox.Show("Договоры по выбранному ресурсу отсутсвуют", "Сообщение", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                списокДобытыхРесурсов.EnableDataGridView();
                 Close();
                 return;
             }
@@ -68,7 +67,7 @@ namespace WindowsFormsApp1
         {
             if (ИнформацияОДоговоре == null || ИнформацияОДоговоре.IsDisposed)
             {
-                ИнформацияОДоговоре = new Информация_о_договоре(this, agreements[dataGridView1.CurrentCell.RowIndex]);
+                ИнформацияОДоговоре = new Информация_о_договоре(agreements[dataGridView1.CurrentCell.RowIndex]);
                 ИнформацияОДоговоре.Show();
             }
         }

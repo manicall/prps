@@ -26,20 +26,27 @@ namespace WindowsFormsApp1
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (Convert.ToDecimal(textBox1.Text) >  0 &&
-                Convert.ToDecimal(textBox2.Text) >= 0 &&
-                Convert.ToDecimal(textBox3.Text) >= 0 ||
-                    Convert.ToDecimal(textBox1.Text) >= 0 &&
-                    Convert.ToDecimal(textBox2.Text) >  0 &&
+            try
+            {
+                if (Convert.ToDecimal(textBox1.Text) > 0 &&
+                    Convert.ToDecimal(textBox2.Text) >= 0 &&
                     Convert.ToDecimal(textBox3.Text) >= 0 ||
                         Convert.ToDecimal(textBox1.Text) >= 0 &&
-                        Convert.ToDecimal(textBox2.Text) >= 0 &&
-                        Convert.ToDecimal(textBox3.Text) >  0
-                )
-            { 
-                extraction.DistributionOfResources(textBox1.Text, textBox2.Text, textBox3.Text); 
+                        Convert.ToDecimal(textBox2.Text) > 0 &&
+                        Convert.ToDecimal(textBox3.Text) >= 0 ||
+                            Convert.ToDecimal(textBox1.Text) >= 0 &&
+                            Convert.ToDecimal(textBox2.Text) >= 0 &&
+                            Convert.ToDecimal(textBox3.Text) > 0
+                    )
+                {
+                    extraction.DistributionOfResources(textBox1.Text, textBox2.Text, textBox3.Text);
+                }
+                else MessageBox.Show("Следует ввести число больше нуля", "Сообщение", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            else MessageBox.Show("Следует ввести число больше нуля", "Сообщение", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            catch(Exception ex){
+                MessageBox.Show(ex.Message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
             Close();
         }
         private void button2_Click(object sender, EventArgs e)

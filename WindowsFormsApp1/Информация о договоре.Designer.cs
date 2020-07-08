@@ -134,6 +134,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "Информация_о_договоре";
             this.Text = "Информация о договоре";
             this.Load += new System.EventHandler(this.Информация_о_договоре_Load);

@@ -234,14 +234,14 @@ namespace WindowsFormsApp1
                 else
                 {
                     remainder = Convert.ToString(Convert.ToDecimal(remainder) - Convert.ToDecimal(volumeAgreement));
-                    SaveChanges(volumeAgreement);
+                    SaveChanges();
                     return true;
                 }
             }
             catch (Exception ex) { MessageBox.Show(ex.Message, "ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error); }
             return false;          
         }
-        private void SaveChanges(string volumeAgreement)
+        private void SaveChanges()
         {
             StreamReader reader = new StreamReader("agreements.txt");
             string str = reader.ReadToEnd();
@@ -259,28 +259,150 @@ namespace WindowsFormsApp1
             catch { }  // если выбрана последняя запись(тк в конце нет "\n")
                 if (subStr.IndexOf(resource.Name) != -1 &&
                         subStr.IndexOf(startDate) != -1 &&
-                        subStr.IndexOf(endDate) != -1 &&
-                        subStr.IndexOf(description) != -1 &&
-                        subStr.IndexOf(status) != -1)
+                        subStr.IndexOf(endDate) != -1)
                 {
                     break;
                 }
             }
             string[] line = subStr.Split('|');
-            line[3] = remainder.PadRight(10);
+            if (line[3].Trim() != remainder)
+            {
+                line[3] = remainder.PadRight(10);
+            }
+            else {
+                line[4] = Status.PadRight(9);
+            }
             string temp = string.Join("|", line);
             str = str.Replace(subStr, temp);
             StreamWriter writer = new StreamWriter("agreements.txt");
             writer.Write(str);
             writer.Close();
         }
-        private void ChangeStatus() {
-
+        public void ChangeStatus() {
+            status = "Активный";
+            SaveChanges();
         }
+        public Resource Resource { get { return resource; } }
         public string StartDate { get { return startDate; } }
         public string EndDate { get { return endDate; } }
         public string Remainder { get { return remainder; } }
         public string Description { get { return description; } }
         public string Status { get { return status; } }
+    }
+
+    public class Equipment
+    {
+        private string name;
+        private string manufacturer;
+        private string description;
+        public Equipment(string name, string manufacturer)
+        {
+            this.name = name;
+            this.manufacturer = manufacturer;
+        }
+        public Equipment(string name, string manufacturer, string description) : this(name, manufacturer) {
+            this.description = description;
+        }
+
+        public void SendQuery(string number, string date) {
+            try
+            {
+                if (Convert.ToInt32(number) <= 0) { 
+                    MessageBox.Show("Количество оборудования должно быть больше нуля", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error); 
+                    return; 
+                }
+                if (DateTime.Parse(date) < DateTime.Now) {
+                    MessageBox.Show("Невозможно указать прошедшую дату в качестве срока поставки", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                if (date.Split('.').Length != 3)
+                {
+                    MessageBox.Show("Разделителем даты является точка", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error); 
+                    return;
+                }
+            }
+            catch (Exception ex) { MessageBox.Show(ex.Message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error); return; }
+            StreamReader reader = new StreamReader("queries.txt");
+            string Str = reader.ReadToEnd();
+            reader.Close();
+            StreamWriter writer = new StreamWriter("queries.txt");
+            writer.WriteLine("{0}|{1}|{2}|{3}|{4}|{5}|{6}", name, manufacturer, DateTime.Now.ToShortDateString(), date, number, "В рассмотрении", "");
+            writer.Write(Str);
+            writer.Close();
+        }
+        
+        public string Name { get { return name; } }
+        public string Manufacturer { get { return manufacturer; } }
+        public string Description { get { return description; } }
+    }
+
+    public class Query {
+
+        private Equipment equipment;
+        private string queryDate;
+        private string deliveryDate;
+        private string number;
+        private string status;
+        private string descriptionOfProblem;
+        public Query(Equipment equipment, string queryDate, string deliveryDate, string number, string status, string descriptionOfProblem) {
+            this.equipment = equipment;
+            this.queryDate = queryDate;
+            this.deliveryDate = deliveryDate;
+            this.number = number;
+            this.status = status;
+            this.descriptionOfProblem = descriptionOfProblem;
+        }
+        public void ChangeStatus(string status, string descriptionOfProblem)
+        {
+            this.status = status;
+            this.descriptionOfProblem = descriptionOfProblem;
+            SaveChanges();
+        }
+        public void ChangeStatus(string status) {
+            this.status = status;
+            this.descriptionOfProblem = "";
+            SaveChanges();
+        }
+        private void SaveChanges() {
+            StreamReader reader = new StreamReader("queries.txt");
+            string str = reader.ReadToEnd();
+            reader.Close();
+            // извлекаем строку, которая была изменена
+            string subStr = "";
+            int index = 0;
+            while (index != -1)
+            {
+                index = str.IndexOf(equipment.Name, index) + 1;
+                subStr = str.Substring(index - 1);
+                try
+                {
+                    subStr = subStr.Remove(subStr.IndexOf("\n"));
+                }
+                catch { }  // если выбрана последняя запись(тк в конце нет "\n")
+                if (subStr.IndexOf(equipment.Name) != -1 &&
+                        subStr.IndexOf(equipment.Manufacturer) != -1 &&
+                        subStr.IndexOf(queryDate) != -1 &&
+                        subStr.IndexOf(deliveryDate) != -1 &&
+                        subStr.IndexOf(number) != -1)
+                {
+                    break;
+                }
+            }
+            string[] line = subStr.Split('|');
+            line[5] = Status;
+            line[6] = descriptionOfProblem;
+            string temp = string.Join("|", line);
+            str = str.Replace(subStr, temp);
+            StreamWriter writer = new StreamWriter("queries.txt");
+            writer.Write(str);
+            writer.Close();
+        }
+
+        public Equipment Equipment { get { return equipment; } }
+        public string QueryDate { get { return queryDate; } }
+        public string DeliveryDate { get { return deliveryDate; } }
+        public string Number { get { return number; } }
+        public string Status { get { return status; } }
+        public string DescriptionOfProblem { get { return descriptionOfProblem; } }
     }
 }

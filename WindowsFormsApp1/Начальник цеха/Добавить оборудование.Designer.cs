@@ -40,6 +40,7 @@
             // 
             // button1
             // 
+            this.button1.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.button1.Location = new System.Drawing.Point(55, 165);
             this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
@@ -58,6 +59,7 @@
             this.button2.TabIndex = 1;
             this.button2.Text = "Отмена";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // label1
             // 
@@ -134,7 +136,6 @@
             this.MinimizeBox = false;
             this.Name = "Добавить_оборудование";
             this.Text = "Добавить оборудование";
-            this.Load += new System.EventHandler(this.Form6_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

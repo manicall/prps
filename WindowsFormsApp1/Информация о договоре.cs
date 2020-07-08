@@ -12,15 +12,13 @@ namespace WindowsFormsApp1
 {
     public partial class Информация_о_договоре : Form
     {
-        Список_активных_договоров списокАктивныхДоговоров;
         Agreement agreement;
         public Информация_о_договоре()
         {
             InitializeComponent();
         }
-        public Информация_о_договоре(Список_активных_договоров списокАктивныхДоговоров, Agreement agreement) : this()
+        public Информация_о_договоре(Agreement agreement) : this()
         {
-            this.списокАктивныхДоговоров = списокАктивныхДоговоров;
             this.agreement = agreement;
         }
         private void Информация_о_договоре_Load(object sender, EventArgs e)

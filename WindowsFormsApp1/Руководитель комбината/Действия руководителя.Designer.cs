@@ -72,6 +72,7 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
             this.Name = "Действия_руководителя";
             this.Text = "Действия_руководителя";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Действия_руководителя_FormClosed);

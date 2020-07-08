@@ -60,6 +60,7 @@
             this.button1.TabIndex = 2;
             this.button1.Text = "Подтвердить";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -69,6 +70,7 @@
             this.button2.TabIndex = 3;
             this.button2.Text = "Отмена";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // Отклонить_запрос
             // 
@@ -80,9 +82,10 @@
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Отклонить_запрос";
             this.Text = "Отклонить запрос";
-            this.Load += new System.EventHandler(this.Form10_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
